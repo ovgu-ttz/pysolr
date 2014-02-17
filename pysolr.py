@@ -52,7 +52,7 @@ except NameError:
 
 __author__ = 'Daniel Lindsley, Joseph Kocherhans, Jacob Kaplan-Moss'
 __all__ = ['Solr']
-__version__ = (3, 1, 0)
+__version__ = (3, 2, 0)
 
 
 def get_version():
@@ -953,10 +953,10 @@ class SolrCoreAdmin(object):
 
         return self._get_url(self.url, params=params)
 
-    def create(self, name, instance_dir=None, config='solrcofig.xml', schema='schema.xml'):
+    def create(self, name, instance_dir=None, config='solrconfig.xml', schema='schema.xml'):
         """http://wiki.apache.org/solr/CoreAdmin#head-7ca1b98a9df8b8ca0dcfbfc49940ed5ac98c4a08"""
         params = {
-            'action': 'STATUS',
+            'action': 'CREATE',
             'name': name,
             'config': config,
             'schema': schema,
